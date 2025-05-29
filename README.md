@@ -25,8 +25,8 @@
 
 ## AI tool usage notes
 
-- Used ChatGPT for backend tech research.
-- Used Cursor during development. Most heavily used it's codegen abilities on the server side.
+- Used ChatGPT for backend tech research
+- Used Cursor during development
 
 ## Getting Started
 
