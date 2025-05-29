@@ -1,8 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Tech stack details
+
+## Backend
+
+- tRPC, Prisma, SQLite, zod
+
+## Frontend
+
+- Next.js, shadcn ui, tailwind
+
+## DESIGN DECISIONS REASONING
+
+## Backend:
+
+- tRPC enabled end-to-end type safety with minimal boilerplate
+- Prisma provided a type-safe ORM with easy schema migrations
+- SQLite offered zero-config, file-based persistence ideal for local development
+- Zod ensured runtime input validation directly within API procedures
+
+## Frontend:
+
+- Next.js App Router enabled server components, layouts, and co-located API handling
+- Tailwind CSS allowed for rapid, utility-first styling
+- ShadCN UI provided accessible, headless components for rapid development
+
+## AI tool usage notes
+
+- Used ChatGPT for backend tech research.
+- Used Cursor during development. Most heavily used it's codegen abilities on the server side.
 
 ## Getting Started
 
-First, run the development server:
+First, run npm install then npm run dev.
 
 ```bash
 npm run dev
@@ -15,22 +43,3 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
