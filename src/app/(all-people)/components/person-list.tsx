@@ -23,7 +23,9 @@ export default function PersonList() {
   const updatePerson = trpc.person.update.useMutation({
     onError: (err) => setError(err.message),
     onSuccess: () => {
+      // clear editing person
       setEditingPerson(null);
+      // refetch the list
       utils.person.getAll.invalidate();
     },
   });
@@ -31,6 +33,7 @@ export default function PersonList() {
   const deletePerson = trpc.person.delete.useMutation({
     onError: (err) => setError(err.message),
     onSuccess: () => {
+      // refetch the list
       utils.person.getAll.invalidate();
     },
   });
@@ -46,6 +49,7 @@ export default function PersonList() {
   const handleSaveEdit = () => {
     if (!editingPerson) return;
 
+    // update person in db
     updatePerson.mutate({
       id: editingPerson.id,
       name: editingPerson.name,
@@ -55,6 +59,7 @@ export default function PersonList() {
 
   const handleDelete = (id: string) => {
     if (window.confirm("Are you sure you want to delete this birthday?")) {
+      // delete person in db
       deletePerson.mutate({ id });
     }
   };

@@ -3,6 +3,12 @@ import { router, publicProcedure } from "../trpc";
 import { prisma } from "../db";
 import { differenceInDays, setYear, getMonth, getDate } from "date-fns";
 
+/**
+ * Calculates the number of days until the next occurrence of a birthday
+ * @param birthDate - The person's birth date
+ * @returns The number of days until their next birthday
+ */
+
 function getDaysUntilBirthday(birthDate: Date): number {
   const today = new Date();
   const thisYearBirthday = setYear(birthDate, today.getFullYear());
@@ -14,6 +20,17 @@ function getDaysUntilBirthday(birthDate: Date): number {
   return differenceInDays(targetDate, today);
 }
 
+/**
+ * Router for handling person-related operations in the birthday tracker.
+ * @router
+ *
+ * @procedure create - Creates a new person with name and birth date
+ * @procedure update - Updates an existing person's information
+ * @procedure delete - Deletes a person by ID
+ * @procedure getAll - Retrieves all people in the database
+ * @procedure getUpcoming - Gets people with birthdays in the next 30 days
+ * @procedure getByMonth - Gets people with birthdays in a specific month (0-11)
+ */
 export const personRouter = router({
   create: publicProcedure
     .input(

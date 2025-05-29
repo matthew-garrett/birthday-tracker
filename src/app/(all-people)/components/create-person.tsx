@@ -14,6 +14,7 @@ export default function CreatePerson() {
 
   useEffect(() => {
     if (date || name) {
+      // clear error when user types in name or date
       setError("");
       return;
     }
@@ -35,9 +36,9 @@ export default function CreatePerson() {
       setError("Please provide both name and date");
       return;
     }
-
+    // clear error when user clicks create
     setError("");
-
+    // create new person in db
     createPerson.mutate({
       name,
       birthDate: date.toISOString(),
